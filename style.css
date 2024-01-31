@@ -8,7 +8,7 @@
 body {
     width: 100%;
     background-color: rgb(114, 218, 100);
-    background-image: url("https://img.mensxp.com/media/content/2021/May/Marvel-Superhero-Movies-Coming-Out-In-2021-1400x653_60a8ca8858903.jpeg?w=1100&h=558&cc=1");
+    background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.bhmpics.com%2FMarvel-Comics-Wallpaper-Desktop-Wallpapers-%252830-%2B-Background-Pictures%2529.html&psig=AOvVaw0quZbsdyms4gmHukK2M9HP&ust=1706786903524000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCMji2cPCh4QDFQAAAAAdAAAAABAE");
     background-size: cover;
     background-position: center;
     background-repeat: repeat;   
@@ -60,14 +60,14 @@ button{
 /*css properties for index.html or home page*/
 #search-bar{
     margin-top: 100px;
-    border:2px solid black;
+    border:2px solid rgb(250, 248, 248);
     display: flex;
     padding: 10px;
     border-radius: 10px;
     font-size: 20px;
-    color:rgba(91, 88, 88, 0.9);
+    color:rgba(74, 63, 63, 0.9);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    background-color: rgb(158, 158, 205);
+    background-color: rgb(247, 247, 250);
     
 }
 #search-icon{
