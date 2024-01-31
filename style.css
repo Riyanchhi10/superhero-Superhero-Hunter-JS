@@ -7,8 +7,8 @@
 }
 body {
     width: 100%;
-    background-color: rgb(114, 218, 100);
-    background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.bhmpics.com%2FMarvel-Comics-Wallpaper-Desktop-Wallpapers-%252830-%2B-Background-Pictures%2529.html&psig=AOvVaw0quZbsdyms4gmHukK2M9HP&ust=1706786903524000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCMji2cPCh4QDFQAAAAAdAAAAABAE");
+    background-color: rgb(245, 247, 245);
+    background-image: url('image.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: repeat;   
@@ -19,7 +19,7 @@ body {
 /*navbar css properties for all three pages*/
 nav{
    
-    background-color: blue;
+    background-color: rgb(235, 235, 243);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 }
@@ -59,7 +59,7 @@ button{
 
 /*css properties for index.html or home page*/
 #search-bar{
-    margin-top: 100px;
+    margin-top: 300px;
     border:2px solid rgb(250, 248, 248);
     display: flex;
     padding: 10px;
@@ -79,7 +79,7 @@ button{
     border: none;
     outline: none;
     width: 100%;
-    background-color: rgb(158, 158, 205);;
+    background-color: rgb(252, 252, 252);;
 }
 #cards-group{
     margin: 50px 0px;
