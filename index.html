@@ -1,98 +1,84 @@
 <!DOCTYPE html>
-<html lang="en" id="root" color-scheme="light">
+<html lang="en">
 
 <head>
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
-     <title>Superhero Hunter</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-     <!-- Google fonts -->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,600;0,900;1,100;1,200;1,300;1,800&display=swap"
-          rel="stylesheet">
+  <!--link fontawesome-->
+  <script src="https://kit.fontawesome.com/14097a442a.js" crossorigin="anonymous"></script>
 
-     <!-- fontawesome -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-          crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!--link bootstrap css-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
 
-     <!-- Custom Stylesheet -->
-     <link rel="stylesheet" href="./css/styles.css">
+  <!--link css-->
+  <link rel="stylesheet" href="style.css">
 
-     <!-- Crypto JS -->
-     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
-          integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <title>SuperHero Hunter/Home</title>
+
+  
 </head>
 
-<body class="flex-col">
+<body>
+  <div>
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg bg-light container-fluid">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <i class="fa-brands fa-sitrox d-inline-block align-text-top brand-logo"></i>
+          Superhero <i class="fa-solid fa-heading brand-logo"></i>Hunter
+        </a>
+        <p class="text-center search-results">@nil....</p>
 
-     <!-- Navbar -->
-     <nav class="flex-row navbar">
-          <!-- Site Icon and Name -->
-          <div class="flex-row navbar-brand">
-               <img class="logo" src="./images/mask.gif" alt="">
-               <a href="./index.html">
-                    <span>Superhero Hunter</span>
-               </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="d-flex flex ">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active bold-line" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link bold-line" href="index3.html">Favourites</a>
+              </li>
+            </ul>
           </div>
-          <!-- Theme Button and Favourites Button -->
-          <div class="flex-row favAndTheme-btn">
-               <button id="theme-btn" class="btn"><i class="fa-solid fa-moon"></i></button>
-               <a class="flex-row link-to-different-page" href="./favorites.html">
-                    <button class="btn fav-btn"> <i class="fa-solid fa-heart fav-icon"></i> &nbsp; Favourites</button>
-               </a>
-          </div>
-     </nav>
+        </div>
+      </div>
+    </nav>
 
-     <!-- Search Bar and Search Results -->
-     <div class="flex-col searchBar-items">
-          <div class="search-bar-container" class="flex-row">
-               <div class="search-icon-container" style=""><i class="fa-solid fa-magnifying-glass"></i></div>
-               <input id="search-bar" type="text" autocomplete="off" placeholder="Search for Superheros">
-          </div>
-          <ul class="flex-col" id="search-results">
-               <!-- Structure of the data that is added using DOM manipulation -->
-               <!-- <li class="flex-row single-search-result">
-                    <div class="flex-row img-info">
-                         <img src="${hero.thumbnail.path+'/portrait_medium.' + hero.thumbnail.extension}" alt="">
-                         <div class="hero-info">
-                              <a class="character-info" href="./more-info.html">
-                                   <span class="hero-name">${hero.name}</span>
-                              </a>
-                         </div>
-                    </div>
-                    <div class="flex-col buttons">
-                         <button class="btn add-to-fav-btn">${favouritesCharacterIDs.has(`${hero.id}`) ? "<i class=\"fa-solid fa-heart-circle-minus\"></i> &nbsp; Remove from Favourites" :"<i class=\"fa-solid fa-heart fav-icon\"></i> &nbsp; Add to Favourites</button>"}
-                    </div>
-                    <div style="display:none;">
-                         <span>${hero.name}</span>
-                         <span>${hero.description}</span>
-                         <span>${hero.comics.available}</span>
-                         <span>${hero.series.available}</span>
-                         <span>${hero.stories.available}</span>
-                         <span>${hero.thumbnail.path+'/portrait_uncanny.' + hero.thumbnail.extension}</span>
-                         <span>${hero.id}</span>
-                         <span>${hero.thumbnail.path+'/landscape_incredible.' + hero.thumbnail.extension}</span>
-                         <span>${hero.thumbnail.path+'/standard_fantastic.' + hero.thumbnail.extension}</span>
-                    </div>
-               </li> -->
-          </ul>
-     </div>
+    <!--main-->
+    <div class="container">
+    
+      <!--search bar-->
+      <div id="search-bar">
+        <div><i class="fa-solid fa-magnifying-glass" id="search-icon"></i></div>
+        <input type="search" id="my-search" placeholder="Hunt Your Super Hero's....."
+          onkeyup="showCorrespondingHeros()">
+      </div>
 
-     <!-- Toasts for notifying user that character is added or removed from favourites -->
-     <span data-visiblity="hide" class="fav-toast">Added to Favourites</span>
-     <span data-visiblity="hide" class="remove-toast">Removed from Favourites</span>
+      <!-- text div -->
+      <div class="mt-5 mb-5">
+        <h4 class="text-center search-results">Your Search Results ....</h4>
 
-     <!-- Background image -->
-     <img class="bg-img" src="./images/background-light-img.png" alt="">
+      </div>
 
-     <!-- External Script file -->
-     <script src="./js/script.js"></script>
+      <!--all searched heroes show in this div-->
+      <div id="cards-group">
+      </div>
+    </div>
+  </div>
+
+  <!-- link for bootstrap javascript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <!-- link for my javascript code -->
+  <script src="script.js"></script>
 
 </body>
 
